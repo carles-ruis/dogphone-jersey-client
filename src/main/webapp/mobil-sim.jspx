@@ -1,0 +1,103 @@
+<jsp:root
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0" >
+<jsp:output doctype-root-element="HTML" doctype-system="about:legacy-compat" />
+<jsp:directive.page contentType="text/html;charset=UTF-8" />
+<c:set var="path" value="${pageContext.request.contextPath}" />
+
+<spring:message code="home" var="home" />
+<spring:message code="mobil" var="mobil" />
+<spring:message code="sim_movistar" var="sim_movistar" />
+<spring:message code="solo_sim" var="solo_sim" />
+<spring:message code="mes_informacio" var="mes_informacio" />
+<spring:message code="sim_desc" var="sim_desc" />
+<spring:message code="sim1_titol" var="sim1_titol" />
+<spring:message code="sim1_desc" var="sim1_desc" />
+<spring:message code="sim1_pop1" var="sim1_pop1" />
+<spring:message code="sim1_pop2" var="sim1_pop2" />
+<spring:message code="sim1_mes1" var="sim1_mes1" />
+<spring:message code="sim1_mes2" var="sim1_mes2" />
+<spring:message code="sim1_mes3" var="sim1_mes3" />
+<spring:message code="sim2_titol" var="sim2_titol" />
+<spring:message code="sim2_desc" var="sim2_desc" />
+<spring:message code="sim2_pop1" var="sim2_pop1" />
+<spring:message code="sim2_pop2" var="sim2_pop2" />
+<spring:message code="sim2_mes1" var="sim2_mes1" />
+<spring:message code="sim2_mes2" var="sim2_mes2" />
+<spring:message code="sim2_mes3" var="sim2_mes3" />
+
+<!-- *********************************************************************************************** -->
+<div id="content">
+<div class="container">
+<div id="mobil-sim">
+
+<!-- *********************************************************************************************** -->
+<div id="the-breadcrumb">
+	<ul class="breadcrumb">
+		<li>${home}<span class="divider">/</span></li>
+		<li>${mobil}<span class="divider">/</span></li>
+		<li>${sim_movistar}</li>
+	</ul>
+</div>
+		
+<!-- *********************************************************************************************** -->
+
+<h2 class="text-info">${solo_sim}</h2>
+<hr />	
+<p>${sim_desc}</p>
+
+<div class="row">
+
+	<div class="span5 offset1">
+		<div class="well well-small">
+			<h3>${sim1_titol}</h3>
+			<div class="media">
+				<div class="pull-left">
+		 			<img class="media-object" src="${path}/img/sim-movistar-contrato.png" />
+				</div>
+				<div class="media-body">
+					<p>${sim1_desc}</p>
+					<div class="btn btn-info pull-right a-popover" href="#"
+						data-original-title="${sim1_pop1}" data-content="${sim1_pop2}" data-placement="bottom"
+						data-toggle="popover" >${mes_informacio}</div>
+				</div>
+			</div>	
+		</div>
+		<ul>
+			<li>${sim1_mes1}</li>
+			<li>${sim1_mes2}</li>
+			<li>${sim1_mes3}</li>
+		</ul>
+	</div>
+
+	<div class="span5">
+		<div class="well well-small">
+			<h3>${sim2_titol}</h3>
+			<div class="media">
+				<div class="pull-left">
+		 			<img class="media-object" src="${path}/img/sim-movistar-tarjeta.png" />
+				</div>
+				<div class="media-body">
+					<p>${sim2_desc}</p>
+					<div class="btn btn-info pull-right a-popover" href="#"
+						data-original-title="${sim2_pop1}" data-content="${sim2_pop2}" data-placement="bottom"
+						data-toggle="popover" >${mes_informacio}</div>
+				</div>
+			</div>	
+		</div>
+		<ul>
+			<li>${sim2_mes1}</li>
+			<li>${sim2_mes2}</li>
+			<li>${sim2_mes3}</li>
+		</ul>
+	</div>
+</div>
+<hr />
+
+<!-- *********************************************************************************************** -->
+</div>
+</div>
+</div>
+
+</jsp:root>

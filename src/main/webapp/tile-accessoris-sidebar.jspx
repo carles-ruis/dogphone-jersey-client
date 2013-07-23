@@ -1,0 +1,32 @@
+<jsp:root
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0" >
+<jsp:directive.page contentType="text/html;charset=UTF-8" />
+<c:set var="path" value="${pageContext.request.contextPath}" />
+
+<spring:message code="targetes" var="targetes" />
+<spring:message code="sd" var="sd" />
+<spring:message code="fundes" var="fundes" />
+<spring:message code="_de_paisos" var="_de_paisos" />
+<spring:message code="_altres" var="_altres" />
+
+<!-- *********************************************************************************************** -->
+<nav id="the-sidebar">
+
+	<div class="well">
+
+	    <ul class="nav nav-list">
+    		<li class="nav-header">${targetes}</li>
+    		<li class="active"><a class="ajax-accessoris" href="${path}/accessoris-targetes">${sd}</a></li>
+    		<li class="divider"><jsp:text /></li>
+    		<li class="nav-header">${fundes}</li>
+    		<li><a class="ajax-accessoris" href="${path}/accessoris-fundes-paisos">${_de_paisos}</a></li>
+    		<li><a class="ajax-accessoris" href="${path}/accessoris-fundes">${_altres}</a></li>
+	    </ul>
+    
+    </div>
+
+</nav>
+
+</jsp:root>

@@ -1,0 +1,65 @@
+<!--[if lt IE 7]>     
+	<html class="no-js lt-ie9 lt-ie8 lt-ie7"
+		xmlns:jsp="http://java.sun.com/JSP/Page"
+		xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles" >  
+	>
+<![endif]-->
+<!--[if IE 7]>
+	<html class="no-js lt-ie9 lt-ie8"
+		xmlns:jsp="http://java.sun.com/JSP/Page"
+		xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles" >  
+<![endif]-->
+<!--[if IE 8]>
+	<html class="no-js lt-ie9"
+		xmlns:jsp="http://java.sun.com/JSP/Page"
+		xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles" >  
+<![endif]-->
+<!--[if gt IE 8]>
+	<!--> <html class="no-js"
+		xmlns:jsp="http://java.sun.com/JSP/Page"
+		xmlns:c="http://java.sun.com/jsp/jstl/core"
+		xmlns:tiles="http://tiles.apache.org/tags-tiles" >  
+<!--<![endif]-->
+<jsp:output doctype-root-element="HTML" doctype-system="about:legacy-compat" />
+<jsp:directive.page contentType="text/html;charset=UTF-8" />
+<c:set var="path" value="${pageContext.request.contextPath}" />
+
+<!-- *********************************************************************************************** -->
+<tiles:insertAttribute name="tile-head" />
+	
+<!-- *********************************************************************************************** -->
+<body>
+<!--[if lt IE 7]>
+	<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- <tiles:insertAttribute name="tile-topbar" />  -->
+<tiles:insertAttribute name="tile-header" />
+<tiles:insertAttribute name="tile-navbar" />
+
+<div id="content">
+<div class="container">
+<div id="accessoris">
+<div class="row">
+	<div class="span2"><tiles:insertAttribute name="tile-accessoris-sidebar" /></div>
+	<div class="span10"><tiles:insertAttribute name="tile-body" ignore="true" /></div>
+</div>
+</div>
+</div>
+</div>
+
+<tiles:insertAttribute name="tile-modal-login" />
+<tiles:insertAttribute name="tile-modal-registre" />
+<tiles:insertAttribute name="tile-modal-response" />
+<tiles:insertAttribute name="tile-footer" />
+
+<!-- *********************************************************************************************** -->
+<tiles:insertAttribute name="tile-scripts" />
+
+</body>
+</html>
+
+
