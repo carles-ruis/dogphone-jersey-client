@@ -15,6 +15,7 @@
 <spring:message code="mobil" var="mobil" />
 <spring:message code="sim_movistar" var="sim_movistar" />
 <spring:message code="fusion" var="fusion" />
+<spring:message code="idioma" var="idioma" />
 <spring:message code="catala" var="catala" />
 <spring:message code="castellano" var="castellano" />
 
@@ -53,10 +54,7 @@
 		</ul>
 		<ul class="nav pull-right">
 			<li class="dropdown">
-			    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-			    	<!--  <img alt="" src="${path}/img/catala.png" /><![CDATA[&nbsp;]]> -->
-			    	Idioma <span class="caret"><jsp:text /></span>
-			    </a>
+			    <a class="dropdown-toggle" data-toggle="dropdown" href="#">${idioma}<span class="caret"><jsp:text /></span></a>
 				<ul class="dropdown-menu">
 			  		<li><a class="a-idioma"  tabindex="-1" href="#" id="ca" ><img alt="" src="${path}/img/catala.png" />${catala}</a></li>
 			  		<li><a class="a-idioma" tabindex="-1" href="#" id="es" ><img alt="" src="${path}/img/castellano.png" />${castellano}</a></li>

@@ -16,7 +16,7 @@
 		<ul class="inline unstyled">
 			<li><![CDATA[&copy;]]> Dogphone 2013</li>	
 			<li class="muted">·</li>
-			<li><a class="btn btn-link" href="#">Torna al principi de la pàgina</a></li>
+			<li><a class="btn btn-link" href="#">${torna}</a></li>
 		</ul>
 	</div>
 	

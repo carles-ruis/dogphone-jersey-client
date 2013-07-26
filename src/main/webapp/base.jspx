@@ -43,7 +43,6 @@
 <tiles:insertAttribute name="tile-body" ignore="true" />
 <tiles:insertAttribute name="tile-modal-login" />
 <tiles:insertAttribute name="tile-modal-registre" />
-<tiles:insertAttribute name="tile-modal-response" />
 <tiles:insertAttribute name="tile-footer" />
 
 <!-- *********************************************************************************************** -->

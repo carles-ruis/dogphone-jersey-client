@@ -90,7 +90,6 @@ function bind_navbar_crides_ajax() {
 		var new_state = $(this).attr('href');
 		if (old_state==new_state) return;
 		History.pushState(null, null, new_state);	
-		$('#url').html(new_state);
 		$('nav li').removeClass('active');
 		$(this).parents().filter('li').addClass('active');
 	});
@@ -190,7 +189,6 @@ function add_botigues_al_dom() {
 function bind_gmap() {
 	$.each( botigues, function(i, botiga) {
 		var element = $("a.gmapping").eq(i);
-//		var element = $('#gmapping'+i);
 		$('#map_canvas').gmap( /* ... i afegim un marker al mapa ... */
 			'addMarker', { 'position': new google.maps.LatLng(botiga.latitut, botiga.longitut), 'bounds': true },
 			function(map,marker) { 
@@ -303,6 +301,6 @@ function bind_accessoris_sidebar() {
 /* ************** Popups per la pantalla de les tarifes SIM movistar ************** */
 /* *************************************************************************************** */
 function bind_sim_movistar_popups() {
-	if ( $("#mobil_sim").exists()==false ) { return; }
+	if ( $("#mobil-sim").exists()==false ) { return; }
 	$(".a-popover").popover();
 };

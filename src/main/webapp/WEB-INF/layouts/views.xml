@@ -11,7 +11,6 @@
 	<put-attribute name="tile-body" value="" />
 	<put-attribute name="tile-modal-login" value="/tile-modal-login.jspx" />
 	<put-attribute name="tile-modal-registre" value="/tile-modal-registre.jspx" />
-	<put-attribute name="tile-modal-response" value="/tile-modal-response.jspx" />
 	<put-attribute name="tile-footer" value="/tile-footer.jspx" />
 	<put-attribute name="tile-scripts" value="/tile-scripts.jspx" />
 </definition>
@@ -24,7 +23,6 @@
 	<put-attribute name="tile-accessoris-sidebar" value="/tile-accessoris-sidebar.jspx" />
 	<put-attribute name="tile-modal-login" value="/tile-modal-login.jspx" />
 	<put-attribute name="tile-modal-registre" value="/tile-modal-registre.jspx" />
-	<put-attribute name="tile-modal-response" value="/tile-modal-response.jspx" />
 	<put-attribute name="tile-footer" value="/tile-footer.jspx" />
 	<put-attribute name="tile-scripts" value="/tile-scripts.jspx" />
 </definition>
