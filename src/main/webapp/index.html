@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<!-- *********************************************************************************************** -->
+<!-- <tiles:insertAttribute name="tile-head" /> -->
+<!-- *********************************************************************************************** -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+<title>Dogphone</title>
+<meta name="description" content="Web de la cadena de botigues Dogphone" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="shortcut icon" href="icon/favicon.ico" />
+<link rel="apple-touch-icon"  sizes="114x114" href="icon/touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="icon/touch-icon-72x72.png" />
+<link rel="apple-touch-icon" href="icon/touch-icon-iphone.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon/apple-touch-icon-114x114-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="icon/apple-touch-icon-72x72-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" href="icon/touch-icon-iphone-precomposed.png" />
+
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<!--  nomes en cas que hi hagi top-bar fixed -->
+<!--  <style> body { padding-top: 60px; padding-bottom: 40px; }</style> -->
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" href="css/font-awesome.min.css" />
+<!--[if IE 7]>
+	<link rel="stylesheet" href="css/font-awesome-ie7.min.css">
+<![endif]-->
+<!-- <link href="charisma/css/jquery-ui-1.8.21.custom.css" rel="stylesheet"/>  -->
+<link rel="stylesheet" href="css/main.css" />
+<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"><!-- --></script>
+</head>
+<body id="dogphone-jersey-client">
+
+<!-- *********************************************************************************************** -->
+<!-- *********************************************************************************************** -->
+
+<!--[if lt IE 7]>
+	<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->        <!--[if lt IE 7]>
+
+<!-- *********************************************************************************************** -->
+<!-- <tiles:insertAttribute name="tile-header" /> -->
+<!-- *********************************************************************************************** -->
+
+<header id="the-header" class="header">
+<div class="container well well-small">
+
+	<div class="pull-left">
+		<ul class="inline">
+			<li><h2><a class="brand ajax" href="inici.html" ><img alt="Dogphone" src="img/Dogphone.png" /></a></h2></li>
+			<li><a class="btn btn-info ajax" href="inici.html"><i class="icon-home icon-white"></i></a></li>
+		</ul>
+	</div>
+
+	<div class="pull-right">
+		<ul id="ul_no_logged" class="nav nav-pills pull-right inline">
+			<li><a class="btn btn-info btn-login" href="#" data-i18n="login"></a></li>
+			<li><a class="btn btn-info btn-registre" href="#" data-i18n="registrat"></a></li>
+		</ul>
+		<ul id="ul_logged" class="nav nav-pills pull-right inline hide">
+			<li class="lead" data-i18n="benvingut" />
+			<li class="lead" id="username" />
+			<li><a class="btn btn-info btn-logout" href="#" data-i18n="logout"></a></li>
+		</ul>
+	</div>
+
+</div>
+</header>
+
+<!-- *********************************************************************************************** -->
+<!-- <tiles:insertAttribute name="tile-navbar" /> -->
+<!-- *********************************************************************************************** -->
+
+<nav id="the-navbar">
+<div class="container">
+<div class="navbar">
+<div class="navbar-inner">
+
+	<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		<span class="icon-bar" />
+		<span class="icon-bar" />
+		<span class="icon-bar" />
+	</button>
+
+	<div class="nav-collapse">
+		<ul class="nav">
+			<li id="li-inici"><a class="ajax" href="inici.html"><i class="icon-home"></i><span data-i18n="inici"></span></a></li>
+			<li><a class="ajax" href="terminals.html" data-i18n="terminals" ></a></li>
+			<li><a class="ajax" href="terminals-pagination.html" data-i18n="terminals_pagination"></a></li>
+			<li><a class="ajax" href="accessoris-targetes.html" data-i18n="accessoris"></a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-i18n="fixe" ><span class="caret" /></a>
+				<ul class="dropdown-menu">
+					<li><a class="ajax" tabindex="-1" href="fixe-totes.html" data-i18n="totes_tarifes"></a></li>
+					<li><a class="ajax" tabindex="-1" href="fixe-llar.html" data-i18n="llar"></a></li>
+				</ul>
+			</li> 
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-i18n="mobil" ><span class="caret" /></a>
+				<ul class="dropdown-menu">
+					<li><a class="ajax" tabindex="-1" href="mobil-sim.html" data-i18n="sim_movistar"></a></li>
+					<li><a class="ajax" tabindex="-1" href="mobil-fusion.html" data-i18n="fusion"></a></li>
+				</ul>
+			</li> 
+		</ul>
+		<ul class="nav pull-right">
+			<li class="dropdown">
+			    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span data-i18n="idioma"></span><span class="caret" />
+			    </a>
+				<ul class="dropdown-menu">
+			  		<li><a class="a-idioma"  tabindex="-1" href="#" id="ca" ><img alt="" src="img/catala.png" /><span data-i18n="catala" /></a></li>
+			  		<li><a class="a-idioma" tabindex="-1" href="#" id="es" ><img alt="" src="img/castellano.png" /><span data-i18n="castellano" /></a></li>
+				</ul>
+			</li>
+		</ul>				
+    
+	</div>
+</div>
+</div>
+</div>
+</nav>
+
+<!-- *********************************************************************************************** -->
+<!-- <tiles:insertAttribute name="tile-body" ignore="true" /> -->
+<!-- *********************************************************************************************** -->
+
+<div id="content"></div>
+
+<!-- *********************************************************************************************** -->
+<!-- <tiles:insertAttribute name="tile-modal-login" />  -->
+<!-- *********************************************************************************************** -->
+
+<div id="the-modal-login" class="modal hide fade">
+
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">×</button>
+		<h3 data-i18n="login_usuari"></h3>
+	</div>
+	
+	<div class="modal-body">
+		<form action="#" method="get" class="form-horizontal">
+			<div class="control-group">
+    			<label class="control-label" for="usuari" data-i18n="usuari"></label>
+	    		<div class="controls"><input type="text" id="login-usuari" /></div>
+			</div>
+			<div class="control-group">
+    			<label class="control-label" for="password" data-i18n="password"></label>
+	    		<div class="controls"><input type="password" id="login-password" /></div>
+			</div>
+		</form>
+		<p id="error-login" class="text-error hide" data-i18n="error_login"></p>
+	</div>
+	
+	<div class="modal-footer">
+		<a href="#" class="btn" data-dismiss="modal" data-i18n="btn_sortir"></a>
+		<a href="#" class="btn btn-primary btn-login" data-i18n="btn_acceptar"></a>		
+	</div>
+
+</div>
+
+<!-- *********************************************************************************************** -->
+<!-- <tiles:insertAttribute name="tile-modal-registre" />  -->
+<!-- *********************************************************************************************** -->
+
+<div id="the-modal-registre" class="modal hide fade">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">×</button>
+		<h3 data-i18n="registre"></h3>
+	</div>
+
+	<div class="modal-body">
+		<form action="#" method="get" class="form-horizontal" id="the-modal-registre-form">
+			<div class="control-group">
+    			<label class="control-label" for="usuari" data-i18n="usuari"></label>
+	    		<div class="controls"><input type="text" id="registre-usuari" name="nom" /></div>
+			</div>
+			<div class="control-group">
+    			<label class="control-label" for="password" data-i18n="password"></label>
+	    		<div class="controls"><input type="password" id="registre-password" name="password" /></div>
+			</div>
+			<div class="control-group">
+    			<label class="control-label" for="confirma" data-i18n="confirma"></label>
+	    		<div class="controls"><input type="password" id="registre-confirma" name="confirmacio" /></div>
+			</div>
+		</form>
+		<p id="error-usuari-existent" class="text-error hide" data-i18n="error_usuari_existent"></p>
+		<p id="error-usuari-confirmacio" class="text-error hide" data-i18n="error_usuari_confirmacio"></p>
+	</div>
+
+	<div class="modal-footer">
+		<a href="#" class="btn" data-dismiss="modal" data-i18n="btn_sortir"></a>
+		<a href="#" class="btn btn-primary btn-registre" data-i18n="btn_acceptar"></a>
+	</div>
+</div>
+
+<div id="the-modal-registre-response" class="modal hide fade" data-backdrop="static" data-keyboard="false" >
+	<div class="modal-header">
+		<p class="text-success" data-i18n="registre_ok"></p>
+	</div>
+	<div class="modal-footer">
+		<a href="#" class="btn btn-primary btn-response" data-i18n="btn_acceptar"></a>
+	</div>
+</div>
+
+<!-- *********************************************************************************************** -->
+<!-- <tiles:insertAttribute name="tile-footer" />  -->
+<!-- *********************************************************************************************** -->
+
+<footer id="the-footer">
+<div class="container well well-small">
+	<div class="pull-left">
+		<ul class="inline unstyled">
+			<li><![CDATA[&copy;]]> Dogphone 2013</li>	
+			<li class="muted">&#183;</li>
+			<li><a class="btn btn-link" href="#" data-i18n="torna"></a></li>
+		</ul>
+	</div>
+	<div class="pull-right"><![CDATA[&copy;]]> Dogphone 2013</div>		
+</div>
+</footer>
+
+<!-- *********************************************************************************************** -->
+<!-- <tiles:insertAttribute name="tile-scripts" />  -->
+<!-- *********************************************************************************************** -->
+
+<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript" ><!-- --></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"><!-- --></script>
+<!-- <script src="charisma/js/jquery-ui-1.8.21.custom.min.js"> --><!-- --><!--  </script>  -->
+<script>window.jQuery || document.write('&lt;script src="js/vendor/jquery-1.9.1.min.js"&gt;&lt;!-- --&gt;&lt;\/script&gt;')</script>
+<script src="js/vendor/jquery.ui.map.min.js"><!-- --></script>
+<script src="js/vendor/jquery.history.js"><!-- --></script>
+<script src="js/vendor/bootstrap.min.js"><!-- --></script>
+<script src="//raw.github.com/botmonster/jquery-bootpag/master/lib/jquery.bootpag.js"><!-- plugin per paginacio --></script>
+<script src="js/vendor/i18next-1.6.3.min.js"><!-- --></script>
+<script src="js/plugins.js"><!-- --></script>
+<script src="js/main.js"><!-- --></script>
+
+</body>
+</html>
+
+

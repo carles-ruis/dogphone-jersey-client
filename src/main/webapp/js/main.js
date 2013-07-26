@@ -6,6 +6,7 @@ terminals ="";
 indexTerminalsPage = 1;
 isLogged = false;
 username = "";
+var History = window.History;
 var TERMINALS_PER_PAGE = 4;
 var URL_REST_GET_BOTIGUES = "http://localhost:8080/dogphone-jersey-service/botiga";
 var URL_REST_GET_TERMINALS = "http://localhost:8080/dogphone-jersey-service/terminal";
@@ -15,6 +16,17 @@ var URL_REST_POST_LOGIN = "http://localhost:8080/dogphone-jersey-service/login";
 /* *************************************************************************************** */
 /* ************************** Document ready ********************* */
 /* *************************************************************************************** */
+$.i18n.init({
+	//lng: 'ca', /*-assignar llenguatge programaticament, si no agafa el del navegador */
+	ns: 'messages', /*- el ns per defecte seria 'translation' */
+	// ns: { namespaces: ['ns.common', 'ns.special'], defaultNs: 'ns.special'}, /*-mes d'un namespace */
+    useLocalStorage: false, /*-caching false per DEV, true per PRO */
+    detectLngQS: 'lang',
+    debug: true /*-true per DEV , false per PRO */
+}, function() {
+    $('body').i18n();
+});
+
 $(function() {
 	get_botigues();
 	get_terminals();
@@ -23,7 +35,7 @@ $(function() {
 	bind_navbar_crides_ajax();
 	bind_navbar_seleccio_idioma();
 	bind_modals();
-	bind_elements_propis_de_la_vista();
+	History.pushState(null, null, "inici.html");
 });
 
 var bind_elements_propis_de_la_vista = function() {
@@ -34,6 +46,7 @@ var bind_elements_propis_de_la_vista = function() {
 	bind_terminals_pagination(); /* terminals_pagination */
 	bind_accessoris_sidebar(); /* accessoris */
 	bind_sim_movistar_popups(); /* sim_movistar */
+	$('#content').i18n();
 };
 
 function get_botigues() {
@@ -48,7 +61,7 @@ function get_terminals() {
 	}});
 };
 
-var goToIndex = function() { window.location.assign('index'); };
+function reload() { window.location.assign('index.html'); };
 var login = function() {
 	isLogged = true;
 	$('#the-modal-login form')[0].reset();
@@ -70,27 +83,24 @@ jQuery.fn.exists = function() { return this.length>0; };
 /* * Crides AJAX per recarregar el contingut principal. jquery.history.js ********************* */
 /* *************************************************************************************** */
 function bind_history_statechange() {
-	var History = window.History;
-	if ( !History.enabled ) { return false; }
-	
 	History.Adapter.bind(window,'statechange',function(){
 		var State = History.getState();
 		History.log(State.data, State.title, State.url);
-		$('#content').load(State.url + " #content", null, bind_elements_propis_de_la_vista);
+		if (State.url.indexOf("index.html")!=-1) reload(); /*- url=index.html */ 
+		else if (State.url.indexOf(".html")==-1 ) reload();  /*- url=/ */
+		else {
+			$('#content').load(State.url, null, bind_elements_propis_de_la_vista);
+		}
 	});
 }
 
 function bind_navbar_crides_ajax() {
-	var History = window.History;
-	if ( !History.enabled ) { return false; }
-
 	$('a.ajax').click(function(e){
 		e.preventDefault();
 		var old_state = History.getState().hash;
 		var new_state = $(this).attr('href');
 		if (old_state==new_state) return;
 		History.pushState(null, null, new_state);	
-		$('#url').html(new_state);
 		$('nav li').removeClass('active');
 		$(this).parents().filter('li').addClass('active');
 	});
@@ -103,9 +113,7 @@ function bind_navbar_seleccio_idioma() {
 	$('.a-idioma').click(function(e) {
 		e.preventDefault();
 		var codi_idioma = $(this).attr('id');
-		/* la seguent linia es per evitar que dongui un error si canvia d'idioma dues vegades seguides*/
-		var old_location = window.location.href.split("?")[0];
-		window.location = old_location + "?lang="+codi_idioma;
+		window.location.href = "index.html?lang=" + codi_idioma;
 	});
 }
 
@@ -171,7 +179,7 @@ function bind_modals() {
 }	
 	
 /* ************************** *********** ********************************* */
-/* ***** index: afegir botigues i enllaçar-les amb googlemap ************** */
+/* ***** inici: afegir botigues i enllaçar-les amb googlemap ************** */
 /* http://code.google.com/p/jquery-ui-map/ */
 /* ************************** *********** ********************************* */
 function add_botigues_al_dom() {
@@ -190,7 +198,6 @@ function add_botigues_al_dom() {
 function bind_gmap() {
 	$.each( botigues, function(i, botiga) {
 		var element = $("a.gmapping").eq(i);
-//		var element = $('#gmapping'+i);
 		$('#map_canvas').gmap( /* ... i afegim un marker al mapa ... */
 			'addMarker', { 'position': new google.maps.LatLng(botiga.latitut, botiga.longitut), 'bounds': true },
 			function(map,marker) { 
@@ -295,7 +302,9 @@ function bind_accessoris_sidebar() {
 		$('nav#the-sidebar li').removeClass('active');
 		$(this).parents().filter('li').addClass('active');
 		var href = $(this).attr('href')+' #accessoris-content';
-		$('#accessoris-content').load(href);
+		$('#accessoris-content').load(href, function() {
+			$('#accessoris-content').i18n();	
+		});
 	});
 };
 
@@ -303,6 +312,15 @@ function bind_accessoris_sidebar() {
 /* ************** Popups per la pantalla de les tarifes SIM movistar ************** */
 /* *************************************************************************************** */
 function bind_sim_movistar_popups() {
-	if ( $("#mobil_sim").exists()==false ) { return; }
-	$(".a-popover").popover();
+	if ( $("#mobil-sim").exists()==false ) { return; }
+	$("#sim1-popover").popover({
+		placement:"bottom",
+		title:$.t('sim1_pop1'),
+		content:$.t('sim1_pop2')
+	});
+	$("#sim2-popover").popover({
+		placement:"bottom",
+		title:$.t('sim2_pop1'),
+		content:$.t('sim2_pop2')
+	});
 };
