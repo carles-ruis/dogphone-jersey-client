@@ -4,8 +4,10 @@ dogphone-jersey-client
 Client REST + Twitter Bootstrap + JS/JQuery
 
 Example of the client-side of a web-app that is supposed to belong to a mobile devices chain store.
-Communicates with server-side: "dogphone-jersey-service"
-It's a version of "dogphone-spring-mongo"
+
+Communicates with server-side: "dogphone-jersey-service".
+
+It's a version of "dogphone-spring-mongo".
 
 - Twitter Bootstrap
 -	HTML5 Boilerplate code
