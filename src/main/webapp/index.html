@@ -34,6 +34,11 @@
 <![endif]-->
 <!-- <link href="charisma/css/jquery-ui-1.8.21.custom.css" rel="stylesheet"/>  -->
 <link rel="stylesheet" href="css/main.css" />
+
+<!-- reparem mancances d'implementacio d'HTML5 en les versions anteriors de IE. En teoria ho ha de fer el modernizr pero no funcionava !?  -->
+ <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"><!-- --></script>
 </head>
 <body id="dogphone-jersey-client">
@@ -41,9 +46,10 @@
 <!-- *********************************************************************************************** -->
 <!-- *********************************************************************************************** -->
 
-<!--[if lt IE 7]>
+<!--[if lt IE 8]>
 	<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-<![endif]-->        <!--[if lt IE 7]>
+	<p class="chromeframe">Estás utilitzando un navegador <strong>antiguo</strong>. <a href="http://browsehappy.com/">Actualízalo</a> o <a href="http://www.google.com/chromeframe/?redirect=true">descarga Google Chrome Frame</a> para ver esta página.</p>
+<![endif]-->        
 
 <!-- *********************************************************************************************** -->
 <!-- <tiles:insertAttribute name="tile-header" /> -->

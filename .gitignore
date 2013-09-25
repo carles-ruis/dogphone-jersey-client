@@ -1,11 +1,6 @@
-.classpath
-.project
-.springBeans
-.settings/
-target/
-
 # Java.gitignore
 *.class
+*.zip
 *.jar
 *.war
 *.ear
